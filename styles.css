@@ -1,17 +1,18 @@
 :root {
-  --forest: #123219;
-  --forest-2: #1d4327;
-  --forest-3: #2d4a35;
-  --cream: #f6f3ee;
-  --paper: #fffdf9;
-  --gold: #f4bd69;
-  --gold-2: #e6a94f;
-  --ink: #0f102f;
-  --muted: #666763;
-  --line: #e3ded4;
+  --forest: #253f3c;
+  --forest-2: #314f4a;
+  --forest-3: #425c57;
+  --sage: #aeb397;
+  --cream: #f7f6ea;
+  --paper: #fffdf7;
+  --gold: #d5d8b4;
+  --gold-2: #bdc19d;
+  --ink: #242424;
+  --muted: #6e706d;
+  --line: #e8e5db;
   --white: #ffffff;
-  --shadow: 0 28px 70px rgba(15, 16, 47, 0.16);
-  --radius: 18px;
+  --shadow: 0 28px 80px rgba(36, 36, 36, 0.14);
+  --radius: 20px;
   color-scheme: light;
 }
 
@@ -27,7 +28,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   color: var(--ink);
-  background: var(--paper);
+  background: var(--cream);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   line-height: 1.5;
 }
@@ -48,7 +49,7 @@ a {
   gap: 16px;
   padding: 12px clamp(18px, 7vw, 130px);
   color: var(--white);
-  background: var(--forest);
+  background: #1f3633;
   font-weight: 700;
 }
 
@@ -71,7 +72,7 @@ a {
   gap: 28px;
   padding: 24px clamp(18px, 7vw, 130px);
   color: var(--white);
-  background: rgba(18, 50, 25, 0.78);
+  background: rgba(37, 63, 60, 0.82);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(18px);
 }
@@ -90,7 +91,7 @@ a {
   width: 52px;
   height: 52px;
   flex: 0 0 auto;
-  background: var(--gold);
+  background: var(--sage);
   border-radius: 50%;
 }
 
@@ -153,13 +154,13 @@ a {
 }
 
 .button.gold {
-  color: var(--ink);
-  background: var(--gold);
-  box-shadow: 0 16px 34px rgba(244, 189, 105, 0.25);
+  color: var(--white);
+  background: var(--forest);
+  box-shadow: 0 16px 34px rgba(37, 63, 60, 0.22);
 }
 
 .button.gold:hover {
-  background: var(--gold-2);
+  background: #1d3330;
 }
 
 .button.glass {
@@ -216,12 +217,15 @@ a {
   overflow: hidden;
   color: var(--white);
   background:
-    linear-gradient(90deg, rgba(18, 50, 25, 0.84), rgba(18, 50, 25, 0.38)),
-    url("assets/hero-family-protection.png") center / cover;
+    linear-gradient(90deg, rgba(37, 63, 60, 0.9), rgba(37, 63, 60, 0.5), rgba(37, 63, 60, 0.12)),
+    url("assets/loukosvky-coaching-hero.png") center / cover;
 }
 
 .hero-overlay,
 .dark-section::before,
+.dark-cards::before,
+.testimonials::before,
+.dark-faq::before,
 .site-footer::before {
   position: absolute;
   inset: 0;
@@ -322,7 +326,7 @@ a {
   left: 0;
   width: 16px;
   height: 3px;
-  background: currentColor;
+  background: var(--sage);
   border-radius: 999px;
   content: "";
 }
@@ -334,7 +338,7 @@ a {
 .marquee {
   overflow: hidden;
   color: var(--white);
-  background: var(--forest-3);
+  background: rgba(37, 63, 60, 0.88);
   border-block: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -480,8 +484,10 @@ h3 {
 
 .services,
 .recruiting,
-.faq {
-  background: #fbfaf7;
+.faq,
+.process-section,
+.pricing {
+  background: #fbfaf1;
 }
 
 .section-heading {
@@ -499,6 +505,17 @@ h3 {
 
 .service-grid article {
   min-height: 260px;
+}
+
+.service-grid article a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 28px;
+  color: inherit;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  font-weight: 900;
 }
 
 .service-grid .featured {
@@ -519,8 +536,37 @@ h3 {
   margin-bottom: 24px;
   background:
     radial-gradient(circle at center, transparent 34%, var(--ink) 35%, var(--ink) 42%, transparent 43%),
-    var(--gold);
+    var(--sage);
   border-radius: 50%;
+}
+
+.dark-cards {
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+  background:
+    radial-gradient(circle at 50% 100%, rgba(174, 179, 151, 0.16), transparent 32%),
+    var(--forest);
+}
+
+.dark-cards > * {
+  position: relative;
+}
+
+.dark-cards .section-heading h2,
+.dark-cards .section-heading p,
+.dark-cards .pill,
+.dark-cards h3,
+.dark-cards .service-grid p {
+  color: var(--white);
+}
+
+.dark-cards .service-grid article {
+  display: flex;
+  min-height: 430px;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .dark-section {
@@ -604,6 +650,42 @@ details p {
   font-size: 1.25rem;
 }
 
+.metric-card {
+  margin-top: 32px;
+  padding: clamp(24px, 4vw, 40px);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.metric-card h3 {
+  font-size: 1.6rem;
+}
+
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 22px;
+  font-weight: 900;
+}
+
+.bar {
+  height: 8px;
+  margin-top: 10px;
+  overflow: hidden;
+  background: #ece9dd;
+  border-radius: 999px;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  background: var(--sage);
+  border-radius: inherit;
+}
+
 .story-panel img {
   min-height: 620px;
 }
@@ -627,6 +709,141 @@ details p {
 
 .assistant-section {
   background: var(--paper);
+}
+
+.process-grid,
+.pricing-grid,
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.process-grid article,
+.pricing-grid article {
+  display: grid;
+  gap: 18px;
+  min-height: 320px;
+  padding: clamp(24px, 4vw, 42px);
+  background: linear-gradient(135deg, var(--white), var(--cream));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.process-grid article span,
+.plan-label {
+  width: fit-content;
+  padding: 8px 18px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-weight: 900;
+}
+
+.value-section {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1fr);
+  gap: clamp(34px, 6vw, 80px);
+  align-items: center;
+}
+
+.value-card {
+  min-height: 420px;
+  padding: clamp(28px, 5vw, 56px);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.value-card strong {
+  display: block;
+  margin-top: 54px;
+  color: var(--ink);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 42px;
+}
+
+.tag-row span {
+  padding: 8px 16px;
+  background: #fbfaf1;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.testimonials,
+.dark-faq {
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+  background: var(--forest);
+}
+
+.testimonials > *,
+.dark-faq > * {
+  position: relative;
+}
+
+.testimonials .section-heading h2,
+.testimonials .section-heading p,
+.dark-faq .section-heading h2,
+.dark-faq .section-heading p {
+  color: var(--white);
+}
+
+.testimonial-grid article {
+  display: grid;
+  gap: 22px;
+  min-height: 330px;
+  padding: clamp(24px, 4vw, 38px);
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+}
+
+.testimonial-grid p,
+.testimonial-grid span {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.stars {
+  color: var(--gold);
+  letter-spacing: 0;
+  font-weight: 900;
+}
+
+.pricing-grid article {
+  min-height: auto;
+  background: var(--white);
+}
+
+.pricing-grid .featured-plan {
+  border-color: rgba(37, 63, 60, 0.28);
+  box-shadow: var(--shadow);
+}
+
+.pricing-grid strong {
+  color: var(--ink);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1;
+}
+
+.pricing-grid ul {
+  display: grid;
+  gap: 12px;
+  margin: 12px 0;
+  padding-left: 22px;
+  color: var(--muted);
 }
 
 .assistant-card {
@@ -671,8 +888,8 @@ details p {
   padding: clamp(76px, 8vw, 126px) clamp(18px, 7vw, 130px);
   color: var(--white);
   background:
-    linear-gradient(90deg, rgba(18, 50, 25, 0.88), rgba(18, 50, 25, 0.44)),
-    url("assets/hero-family-protection.png") center / cover fixed;
+    linear-gradient(90deg, rgba(37, 63, 60, 0.92), rgba(37, 63, 60, 0.6)),
+    url("assets/loukosvky-coaching-hero.png") center / cover fixed;
 }
 
 .contact-intro h2,
@@ -767,13 +984,23 @@ textarea {
   color: var(--ink);
 }
 
+.dark-faq .faq-grid details {
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-faq .faq-grid summary,
+.dark-faq .faq-grid p {
+  color: var(--white);
+}
+
 .site-footer {
   position: relative;
   overflow: hidden;
   padding: clamp(56px, 7vw, 96px) clamp(18px, 7vw, 130px) 32px;
   color: var(--white);
   background:
-    radial-gradient(circle at 45% 0%, rgba(244, 189, 105, 0.13), transparent 32%),
+    radial-gradient(circle at 45% 0%, rgba(213, 216, 180, 0.16), transparent 32%),
     var(--forest);
 }
 
@@ -837,7 +1064,8 @@ summary:focus-visible {
   .split,
   .dark-section,
   .contact-section,
-  .assistant-card {
+  .assistant-card,
+  .value-section {
     grid-template-columns: 1fr;
   }
 
@@ -850,7 +1078,10 @@ summary:focus-visible {
 
   .service-grid,
   .recruit-grid,
-  .footer-grid {
+  .footer-grid,
+  .process-grid,
+  .pricing-grid,
+  .testimonial-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -900,8 +1131,8 @@ summary:focus-visible {
     min-height: 680px;
     align-items: end;
     background:
-      linear-gradient(180deg, rgba(18, 50, 25, 0.35), rgba(18, 50, 25, 0.9) 62%),
-      url("assets/hero-family-protection.png") 52% center / cover;
+      linear-gradient(180deg, rgba(37, 63, 60, 0.35), rgba(37, 63, 60, 0.92) 62%),
+      url("assets/loukosvky-coaching-hero.png") 52% center / cover;
   }
 
   .hero-content {
@@ -923,6 +1154,9 @@ summary:focus-visible {
   .help-grid,
   .service-grid,
   .recruit-grid,
+  .process-grid,
+  .pricing-grid,
+  .testimonial-grid,
   .form-grid,
   .footer-grid {
     grid-template-columns: 1fr;
@@ -1036,8 +1270,8 @@ summary:focus-visible {
 
   .contact-section {
     background:
-      linear-gradient(180deg, rgba(18, 50, 25, 0.9), rgba(18, 50, 25, 0.76)),
-      url("assets/hero-family-protection.png") center / cover;
+      linear-gradient(180deg, rgba(37, 63, 60, 0.92), rgba(37, 63, 60, 0.78)),
+      url("assets/loukosvky-coaching-hero.png") center / cover;
   }
 
   .lead-form {
@@ -1055,6 +1289,12 @@ summary:focus-visible {
 
   .footer-bottom {
     font-size: 0.92rem;
+  }
+
+  .dark-cards .service-grid article,
+  .process-grid article,
+  .testimonial-grid article {
+    min-height: auto;
   }
 }
 

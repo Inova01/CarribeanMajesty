@@ -1,13 +1,14 @@
-# CarribeanMajesty Insurance Website
+# Loukosvky Morisset Coaching Website
 
-A static, Cloudflare-ready insurance website for CarribeanMajesty, focused on life insurance, IUL education, family protection, business protection, legacy planning, and agent recruiting.
+A static, Cloudflare-ready personal business coaching funnel for Loukosvky Morisset. The public positioning focuses on life coaching, business growth, clarity, mindset, leadership, and private strategy calls.
 
 ## Files
 
-- `index.html` - funnel page structure, SEO metadata, lead form
-- `styles.css` - responsive premium financial-services design
+- `index.html` - coaching funnel page structure, SEO metadata, and lead form
+- `styles.css` - responsive premium coaching design
 - `script.js` - form validation and temporary `mailto:` submission behavior
-- `assets/hero-family-protection.png` - generated hero visual used by the page
+- `assets/loukosvky-coaching-hero.png` - generated coaching hero visual used by the page
+- `assets/hero-family-protection.png` - previous consultation visual retained as a backup asset
 - `server.js` - local preview server
 
 ## Local Preview
@@ -22,11 +23,11 @@ Then open `http://localhost:4173`.
 
 ## Before Launch
 
-1. Replace `info@carribeanmajesty.com` in `script.js` with the real intake email, or connect both forms to a secure CRM/form backend.
-2. Confirm licensed states and add state-specific compliance notes if needed.
-3. Add business phone, license number, carrier/agency disclosure, privacy policy, and terms of use.
-4. Review all insurance and IUL copy with the licensed producer before publishing.
-5. Build the planned pages: About, Life Insurance, IUL Education, Family Protection, Business Protection, Legacy Planning, Join the Team, Blog/Education Center, Contact, Privacy Policy, and Terms of Use.
+1. Replace `info@loukosvky.com` in `script.js` with the real intake email, or connect the form to a secure CRM/scheduling backend.
+2. Add Louko's real phone number, booking calendar link, social links, and final domain.
+3. Confirm the final spelling of the brand name: `Loukosvky Morisset`.
+4. Add privacy policy, terms, and consent language for lead follow-up.
+5. Keep public copy coaching-first. Any separate licensed product or protection conversation should happen privately after a discovery call.
 
 ## Deploy To Cloudflare Pages
 

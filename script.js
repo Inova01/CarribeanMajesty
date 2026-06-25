@@ -22,21 +22,20 @@ forms.forEach((form) => {
       .map(([key, value]) => `${formatLabel(key)}: ${value}`)
       .join("\n");
 
-    const isAgentForm = form.id === "agentForm";
-    const subject = encodeURIComponent(isAgentForm ? "New agent interest request" : "New consultation request");
+    const subject = encodeURIComponent("New Loukosvky strategy call request");
     const body = encodeURIComponent(
       [
-        isAgentForm ? "New CarribeanMajesty agent interest request:" : "New CarribeanMajesty consultation request:",
+        "New Loukosvky Morisset strategy call request:",
         "",
         details,
         "",
-        "Reminder: do not send SSN, medical history, financial account details, or policy numbers by email.",
+        "Reminder: do not send sensitive personal, medical, financial, account, or confidential details by email.",
       ].join("\n"),
     );
 
-    status.textContent = "Opening your email app with the request details. Replace this with a CRM or secure form backend before launch.";
+    status.textContent = "Opening your email app with the request details. Replace this with a CRM or secure scheduling backend before launch.";
     status.className = "form-note success";
-    window.location.href = `mailto:info@carribeanmajesty.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@loukosvky.com?subject=${subject}&body=${body}`;
   });
 });
 
