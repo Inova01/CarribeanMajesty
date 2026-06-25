@@ -756,6 +756,116 @@ details p {
   min-height: 620px;
 }
 
+.photo-slider {
+  overflow: hidden;
+  min-height: 620px;
+  background: var(--forest);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.slider-track {
+  position: relative;
+  min-height: 620px;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 420ms ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  min-height: 620px;
+  object-fit: cover;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.photo-slider::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 48%, rgba(0, 0, 0, 0.55));
+  content: "";
+}
+
+.slider-panel {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 50px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--white);
+}
+
+.slider-panel strong,
+.slider-panel span {
+  display: block;
+}
+
+.slider-panel strong {
+  font-size: 1.18rem;
+}
+
+.slider-panel span {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.slider-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.slider-btn {
+  min-height: 42px;
+  padding: 0 16px;
+  color: var(--ink);
+  background: var(--gold);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+}
+
+.slider-dots {
+  position: absolute;
+  right: 22px;
+  bottom: 20px;
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+}
+
+.slider-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.45);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.slider-dots button.active {
+  width: 28px;
+  background: var(--gold);
+}
+
 .recruit-grid article {
   display: grid;
   gap: 10px;
@@ -1270,6 +1380,17 @@ summary:focus-visible {
     min-height: 380px;
   }
 
+  .photo-slider,
+  .slider-track,
+  .slide img {
+    min-height: 480px;
+  }
+
+  .slider-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .image-stack::before {
     top: -18px;
     left: -18px;
@@ -1427,6 +1548,31 @@ summary:focus-visible {
   .image-stack img,
   .story-panel img {
     min-height: 310px;
+  }
+
+  .photo-slider,
+  .slider-track,
+  .slide img {
+    min-height: 430px;
+  }
+
+  .slider-panel {
+    left: 16px;
+    right: 16px;
+    bottom: 54px;
+  }
+
+  .slider-controls {
+    width: 100%;
+  }
+
+  .slider-btn {
+    flex: 1;
+  }
+
+  .slider-dots {
+    left: 16px;
+    right: auto;
   }
 
   .floating-note {
