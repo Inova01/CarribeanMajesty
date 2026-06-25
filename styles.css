@@ -650,6 +650,72 @@ details p {
   font-size: 1.25rem;
 }
 
+.trust-section {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.82fr) minmax(360px, 1fr);
+  gap: clamp(36px, 6vw, 88px);
+  align-items: center;
+  background:
+    radial-gradient(circle at 14% 12%, rgba(174, 179, 151, 0.22), transparent 28%),
+    var(--paper);
+}
+
+.trust-copy h2 {
+  max-width: 780px;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(2.45rem, 5.4vw, 4.7rem);
+  line-height: 1.03;
+}
+
+.trust-copy p:not(.pill) {
+  color: var(--muted);
+  font-size: clamp(1.04rem, 1.35vw, 1.22rem);
+}
+
+.trust-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.trust-points span {
+  padding: 10px 16px;
+  color: var(--ink);
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-weight: 850;
+}
+
+.trust-gallery {
+  position: relative;
+  min-height: 620px;
+}
+
+.trust-gallery img {
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.portrait-main {
+  width: min(520px, 82%);
+  height: 620px;
+  border: 10px solid var(--white);
+  border-radius: var(--radius);
+}
+
+.portrait-small {
+  position: absolute;
+  right: 0;
+  bottom: 34px;
+  width: min(330px, 50%);
+  height: 360px;
+  border: 10px solid var(--cream);
+  border-radius: var(--radius);
+}
+
 .metric-card {
   margin-top: 32px;
   padding: clamp(24px, 4vw, 40px);
@@ -1065,7 +1131,8 @@ summary:focus-visible {
   .dark-section,
   .contact-section,
   .assistant-card,
-  .value-section {
+  .value-section,
+  .trust-section {
     grid-template-columns: 1fr;
   }
 
@@ -1193,7 +1260,8 @@ summary:focus-visible {
   .split,
   .dark-section,
   .contact-section,
-  .assistant-card {
+  .assistant-card,
+  .trust-section {
     gap: 28px;
   }
 
@@ -1219,9 +1287,24 @@ summary:focus-visible {
   .content-block h2,
   .section-heading h2,
   .contact-intro h2,
-  .feature-card h2 {
+  .feature-card h2,
+  .trust-copy h2 {
     font-size: clamp(2rem, 10vw, 3rem);
     line-height: 1.08;
+  }
+
+  .trust-gallery {
+    min-height: 520px;
+  }
+
+  .portrait-main {
+    width: 78%;
+    height: 520px;
+  }
+
+  .portrait-small {
+    width: 46%;
+    height: 300px;
   }
 
   .section-heading {
@@ -1355,7 +1438,8 @@ summary:focus-visible {
   .content-block h2,
   .section-heading h2,
   .contact-intro h2,
-  .feature-card h2 {
+  .feature-card h2,
+  .trust-copy h2 {
     font-size: clamp(1.85rem, 9.3vw, 2.55rem);
   }
 
@@ -1363,9 +1447,27 @@ summary:focus-visible {
   .section-heading p:not(.pill),
   .contact-intro p,
   .feature-card p,
+  .trust-copy p:not(.pill),
   .assistant-card p,
   .lead-form p {
     font-size: 1rem;
+  }
+
+  .trust-gallery {
+    min-height: auto;
+  }
+
+  .portrait-main,
+  .portrait-small {
+    position: static;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    border-width: 7px;
+  }
+
+  .portrait-small {
+    margin-top: 14px;
   }
 
   .service-grid article {
